@@ -2,13 +2,11 @@
 exports.newArray = function flatten (input) {
   var output = [];
 
-  for (var i = 0; i < input.length; i++) {
-    // Using Array.isArray for new browsers, in older browsers this can be done
-    // using `Object.prototype.toString.call(input[i]) === '[object Array]'`
-    if (Array.isArray(input[i])) {
-      output.push.apply(output, flatten(input[i]));
+  for (var i = 0; i < arr.length; i++) {
+    if (Array.isArray(arr[i])) {
+      output = output.concat(flatten(arr[i]));
     } else {
-      output.push(input[i]);
+      output.push(arr[i]);
     }
   }
 
